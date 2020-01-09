@@ -10,11 +10,22 @@ import Page5 from './views/nav2/Page5.vue'
 import Page6 from './views/nav3/Page6.vue'
 import echarts from './views/charts/echarts.vue'
 import courseType from './views/course/CourseType'
+import Course from './views/course/Course'
+import TenantRegister from "./views/TenantRegister";
+import Site from "./views/page/Site";
+import Pageinfo from "./views/page/Pageinfo";
+
 
 let routes = [
     {
         path: '/login',
         component: Login,
+        name: '',
+        hidden: true
+    },
+    {
+        path: '/tenantRegister',
+        component: TenantRegister,
         name: '',
         hidden: true
     },
@@ -52,7 +63,17 @@ let routes = [
         iconCls: 'fa fa-id-card-o',
         children: [
             { path: '/coursetype', component: courseType, name: '课程类型' },
-            { path: '/course', component: Page5, name: '课程管理' }
+            { path: '/course', component: Course, name: '课程管理' }
+        ]
+    },
+    {
+        path: '/',
+        component: Home,
+        name: '页面管理',
+        iconCls: 'fa fa-id-card-o',
+        children: [
+            { path: '/site', component: Site, name: '站点管理' },
+            { path: '/pageinfo', component: Pageinfo, name: '页面管理' }
         ]
     },
     {
